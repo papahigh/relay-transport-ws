@@ -29,9 +29,10 @@ The server will response only with `GQL_CONNECTION_ACK` + `GQL_CONNECTION_KEEP_A
 Client sends this message to execute GraphQL operation
 - `id: string` : The id of the GraphQL operation to start
 - `payload: Object`:
-    * `query: string` : GraphQL operation as string or parsed GraphQL document node
+    * `query?: string` : GraphQL operation as string or parsed GraphQL document node
     * `variables?: Object` : Object with GraphQL variables
     * `operationName?: string` : GraphQL operation name
+    * `operationId?: string` : hash of the persisted query
     
 #### GQL_STOP
 Client sends this message in order to stop a running GraphQL operation execution (for example: unsubscribe)
