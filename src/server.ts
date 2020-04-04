@@ -337,6 +337,7 @@ export class SubscriptionServer {
               const baseParams: ExecutionParams = {
                 query: parsedMessage.payload?.query,
                 variables: parsedMessage.payload?.variables,
+                operationId: parsedMessage.payload?.operationId,
                 operationName: parsedMessage.payload?.operationName,
                 context: isObject(initResult)
                   ? Object.assign(Object.create(Object.getPrototypeOf(initResult)), initResult)
